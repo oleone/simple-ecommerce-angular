@@ -1,0 +1,14 @@
+<div class="produto d-flex flex-column">
+    <div class="imagem-produto" style="background-image: url('../assets/images/{{ filterPhotoInSpotlight(produto.imagens).nome }}')"></div>
+    <div class="produto-titulo">
+        {{ produto.nome }}
+    </div>
+    <div class="starts d-flex flex-row">
+        <star-rating [starType]="'svg'" [rating]="2.63"></star-rating>
+    </div>
+    <div class="tipo">{{ produto.categoria }}</div>
+
+    <div class="botao-detalhe">
+        <button class="btn btn-primary btn-lg btn-block" (click)="goToDetail(produto.id)">Detalhe</button>
+    </div>
+</div>

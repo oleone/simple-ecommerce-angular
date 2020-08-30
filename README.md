@@ -1,10 +1,10 @@
-# TesteFrontendEturnAngular
+# Documentação desafio Eturn
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.8.
+Esse projeto foi gerado usando [Angular CLI](https://github.com/angular/angular-cli) em versão 10.0.8.
 
-## Development server
+## Start do projeto
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Abra o cmd na pasta raiz do projeto e execute `npm run api` para startar o serviço fake, abra outro cmd ainda na pasta raiz e execute `ng serve -o` e aguarde que o projeto abrirá automáticamente no seu browser padrão.
 
 ## Code scaffolding
 

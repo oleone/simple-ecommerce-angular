@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'Daxline Pro';
+    src: url('../fonts/DaxlinePro-Black_13126.ttf') format('.ttf');
+}
+// @import "../fonts/DaxlinePro-Black_13126.ttf";
+// @import "../fonts/DaxlinePro-Bold_13127.ttf";
+// @import "../fonts/DaxlinePro-ExtraBold_13128.ttf";
+// @import "../fonts/DaxlinePro-Light_13129.ttf";
+// @import "../fonts/DaxlinePro-Medium_13130.ttf";
+// @import "../fonts/DaxlinePro-Regular_13131.ttf";
+// @import "../fonts/DaxlinePro-Thin_13132.ttf";
+
+$font-family-daxline-pro: 'Daxline Pro';
+$font-family-base: $font-family-daxline-pro !important;
+
+/* Paleta de cores */
+$verde-primario: rgb(0, 98, 112);
+$secondary: rgb(16, 127, 146);
+$terciary: rgb(63, 63, 65);
+$quaternary: rgb(128, 129, 132);
+
+$primary:       $verde-primario !important;
