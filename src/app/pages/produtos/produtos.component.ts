@@ -21,6 +21,7 @@ export class ProdutosComponent implements OnInit {
     })
       .catch(error => {
         console.log(error);
+        this.products = [];
       })
       .finally(() => {
 

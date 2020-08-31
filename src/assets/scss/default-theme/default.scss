@@ -1,0 +1,13 @@
+@import "../bootstrap-overrides";
+
+.rating.color-negative .star-container .star svg {
+    fill: $dark !important;
+}
+
+.rating.color-ok .star-container .star svg {
+    fill: $dark !important;
+}
+
+.rating.color-positive .star-container .star svg {
+    fill: $dark !important;
+}

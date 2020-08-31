@@ -29,4 +29,12 @@ export class FilterComponent implements OnInit {
     this.changeFilter.next(this.data);
   }
 
+  doDisponiveis() {
+    const filter = 'disponivel=false';
+  }
+
+  doIndisponiveis() {
+
+  }
+
 }

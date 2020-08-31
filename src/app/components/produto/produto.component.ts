@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Product, Imagem } from 'src/app/models';
+import { Product, Imagem, Nota } from 'src/app/models';
 import { Router } from '@angular/router';
 
 import { CalculateRatingService } from '../../services/calculate-rating.service';
@@ -25,6 +25,10 @@ export class ProdutoComponent implements OnInit {
 
   goToDetail(id: string) {
     this.router.navigate([`produtos/${id}`]);
+  }
+
+  calculateRate(notes: Nota[]) {
+    return this.serviceRating.calculateRate(notes);
   }
 
 }

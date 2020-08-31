@@ -13,10 +13,8 @@
 $font-family-daxline-pro: 'Daxline Pro';
 $font-family-base: $font-family-daxline-pro !important;
 
-/* Paleta de cores */
-$verde-primario: rgb(0, 98, 112);
+$primary: rgb(0, 98, 112); // #006270;
 $secondary: rgb(16, 127, 146);
-$terciary: rgb(63, 63, 65);
-$quaternary: rgb(128, 129, 132);
-
-$primary:       $verde-primario !important;
+$light: rgb(128, 129, 132); // #808184
+$danger: #dc3545;
+$dark: rgb(63, 63, 65);
