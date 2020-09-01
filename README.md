@@ -8,7 +8,7 @@ Esse projeto foi gerado usando [Angular CLI](https://github.com/angular/angular-
 
 * `npm run api` - No mesmo cmd ainda na pasta raiz do projeto, execute para startar o serviço fake.
 
-* `ng serve -o` - Abra outro cmd ainda na pasta raiz e execute e aguarde que o projeto abrirá automáticamente no seu browser padrão, recomendo que sua navegadores em versões mais atuais de preferência Google Chrome.
+* `ng serve -o` - Execute o comando em outro cmd ainda na pasta raiz, aguarde que o projeto abrirá automáticamente no seu browser padrão, recomendo que use navegador em versão mais atuais de preferência Google Chrome.
 
 
 ## Links para contato
