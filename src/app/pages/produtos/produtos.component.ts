@@ -10,22 +10,10 @@ import { Product } from 'src/app/models';
 })
 export class ProdutosComponent implements OnInit {
 
-  products: Product[];
-
   constructor(private service: ProdutosService) { }
 
   ngOnInit(): void {
-    this.service.get().then((_products: Product[]) => {
-      console.log(_products);
-      this.products = _products;
-    })
-      .catch(error => {
-        console.log(error);
-        this.products = [];
-      })
-      .finally(() => {
-
-      });
+    
   }
 
 }

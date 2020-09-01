@@ -10,10 +10,10 @@
                     <span *ngIf="!disponivel">Indisponível</span>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <button class="dropdown-item" (click)="doDisponibilidade()">
+                    <button class="dropdown-item" (click)="change(true, precoMedio, categoria)">
                         Disponível
                     </button>
-                    <button class="dropdown-item" (click)="doDisponibilidade()">
+                    <button class="dropdown-item" (click)="change(false, precoMedio, categoria)">
                         Indisponível
                     </button>
                 </div>
@@ -21,28 +21,32 @@
             <div class="dropdown mr-4">
                 <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" id="dropdownMenuButton"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Preço
+                    <span *ngIf="!precoMedio">Preço</span>
+                    <span *ngIf="precoMedio">{{ precoMedio | cifroes }}</span>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <button class="dropdown-item" (click)="doDisponibilidade()">$$$</button>
-                    <button class="dropdown-item" (click)="doDisponibilidade()">$$$$</button>
-                    <button class="dropdown-item" (click)="doDisponibilidade()">$$$$$$</button>
+                    <button class="dropdown-item" (click)="change(disponivel, 2, categoria)">$$</button>
+                    <button class="dropdown-item" (click)="change(disponivel, 3, categoria)">$$$</button>
+                    <button class="dropdown-item" (click)="change(disponivel, 4, categoria)">$$$$</button>
+                    <button class="dropdown-item" (click)="change(disponivel, 5, categoria)">$$$$$</button>
+                    <button class="dropdown-item" (click)="change(disponivel, 6, categoria)">$$$$$$</button>
                 </div>
             </div>
             <div class="dropdown mr-4">
                 <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" id="dropdownMenuButton"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Categorias
+                    <span *ngIf="!categoria">Categorias</span>
+                    <span *ngIf="categoria">{{ categoria }}</span>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <button class="dropdown-item" (click)="doDisponibilidade()">Todos</button>
-                    <button class="dropdown-item" (click)="doDisponibilidade()">Blusa</button>
-                    <button class="dropdown-item" (click)="doDisponibilidade()">Calça</button>
-                    <button class="dropdown-item" (click)="doDisponibilidade()">Casaco</button>
-                    <button class="dropdown-item" (click)="doDisponibilidade()">Vestido</button>
-                    <button class="dropdown-item" (click)="doDisponibilidade()">Body</button>
-                    <button class="dropdown-item" (click)="doDisponibilidade()">Calçados</button>
-                    <button class="dropdown-item" (click)="doDisponibilidade()">Meias</button>
+                    <button class="dropdown-item" (click)="change(disponivel, precoMedio, null)">Todos</button>
+                    <button class="dropdown-item" (click)="change(disponivel, precoMedio, 'Blusa')">Blusa</button>
+                    <button class="dropdown-item" (click)="change(disponivel, precoMedio, 'Calça')">Calça</button>
+                    <button class="dropdown-item" (click)="change(disponivel, precoMedio, 'Casaco')">Casaco</button>
+                    <button class="dropdown-item" (click)="change(disponivel, precoMedio, 'Vestido')">Vestido</button>
+                    <button class="dropdown-item" (click)="change(disponivel, precoMedio, 'Body')">Body</button>
+                    <button class="dropdown-item" (click)="change(disponivel, precoMedio, 'Calçados')">Calçados</button>
+                    <button class="dropdown-item" (click)="change(disponivel, precoMedio, 'Meias')">Meias</button>
                 </div>
             </div>
         </div>

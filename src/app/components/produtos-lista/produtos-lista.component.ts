@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Location } from '@angular/common';
 
 import { Product } from 'src/app/models';
+import { ProdutosService } from 'src/app/services/produtos.service';
 
 @Component({
   selector: 'app-produtos-lista',
@@ -13,9 +14,15 @@ export class ProdutosListaComponent implements OnInit {
   @Input() products: Product[];
   product: Product;
 
-  constructor(private location: Location) { }
+  // pagination: {
+  //   _page: 1,
+  //   _limit: 10
+  // };
+
+  constructor(private location: Location, private service: ProdutosService) { }
 
   ngOnInit(): void {
+    this.getProducts();
   }
 
   changeFilter(_products: Product[]) {
@@ -29,6 +36,19 @@ export class ProdutosListaComponent implements OnInit {
   back() {
     // this.location.back();
     this.product = null;
+  }
+
+  getProducts() {
+    this.service.get().then((_products: Product[]) => {
+      this.products = _products;
+    })
+      .catch(error => {
+        console.log(error);
+        this.products = [];
+      })
+      .finally(() => {
+
+      });
   }
 
 }

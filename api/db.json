@@ -343,39 +343,6 @@
             ],
             "precoMedio": 3,
             "disponivel": false
-        },
-        {
-            "id": 9,
-            "nome": null,
-            "categoria": null,
-            "notas": [
-                {
-                    "nota": 3
-                },
-                {
-                    "nota": 3
-                },
-                {
-                    "nota": 5
-                },
-                {
-                    "nota": 2
-                },
-                {
-                    "nota": 3
-                },
-                {
-                    "nota": 3
-                }
-            ],
-            "imagens": [
-                {
-                    "nome": "L12-1.jpg",
-                    "destacada": true
-                }
-            ],
-            "precoMedio": 3,
-            "disponivel": false
         }
     ]
 }

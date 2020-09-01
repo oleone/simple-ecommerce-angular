@@ -30,7 +30,6 @@ export class CalculateRatingService {
   }
 
   calculateRate(notas: Nota[]) {
-    console.log(notas);
     let rate = 0;
     let sum = 0;
     let index = 0;
