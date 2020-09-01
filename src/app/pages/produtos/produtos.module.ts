@@ -7,9 +7,10 @@ import { ProdutosComponent } from './produtos.component';
 import { ProdutosService } from 'src/app/services/produtos.service';
 import { ComponentsModule } from 'src/app/components/components.module';
 import { CalculateRatingService } from 'src/app/services/calculate-rating.service';
+import { ProdutoDetailsComponent } from './produto-details/produto-details.component';
 
 @NgModule({
-  declarations: [ProdutosComponent],
+  declarations: [ProdutosComponent, ProdutoDetailsComponent],
   imports: [
     CommonModule,
     HttpClientModule,

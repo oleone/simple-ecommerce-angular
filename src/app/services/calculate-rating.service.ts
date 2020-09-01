@@ -41,7 +41,7 @@ export class CalculateRatingService {
       }
       rate = Math.round(sum / notas.length);
     }
-    console.log(rate);
+    // console.log(rate);
     return rate;
   }
 

@@ -6,11 +6,16 @@
             <div class="dropdown mr-4">
                 <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" id="dropdownMenuButton"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Disponível
+                    <span *ngIf="disponivel">Disponível</span>
+                    <span *ngIf="!disponivel">Indisponível</span>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <button class="dropdown-item" (click)="doDisponiveis()">Disponível</button>
-                    <button class="dropdown-item" (click)="doIndisponiveis()">Indisponível</button>
+                    <button class="dropdown-item" (click)="doDisponibilidade()">
+                        Disponível
+                    </button>
+                    <button class="dropdown-item" (click)="doDisponibilidade()">
+                        Indisponível
+                    </button>
                 </div>
             </div>
             <div class="dropdown mr-4">
@@ -19,9 +24,9 @@
                     Preço
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <button class="dropdown-item" (click)="doIndisponiveis()">$$$</button>
-                    <button class="dropdown-item" (click)="doIndisponiveis()">$$$$</button>
-                    <button class="dropdown-item" (click)="doIndisponiveis()">$$$$$$</button>
+                    <button class="dropdown-item" (click)="doDisponibilidade()">$$$</button>
+                    <button class="dropdown-item" (click)="doDisponibilidade()">$$$$</button>
+                    <button class="dropdown-item" (click)="doDisponibilidade()">$$$$$$</button>
                 </div>
             </div>
             <div class="dropdown mr-4">
@@ -30,14 +35,14 @@
                     Categorias
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <button class="dropdown-item" (click)="doIndisponiveis()">Todos</button>
-                    <button class="dropdown-item" (click)="doIndisponiveis()">Blusa</button>
-                    <button class="dropdown-item" (click)="doIndisponiveis()">Calça</button>
-                    <button class="dropdown-item" (click)="doIndisponiveis()">Casaco</button>
-                    <button class="dropdown-item" (click)="doIndisponiveis()">Vestido</button>
-                    <button class="dropdown-item" (click)="doIndisponiveis()">Body</button>
-                    <button class="dropdown-item" (click)="doIndisponiveis()">Calçados</button>
-                    <button class="dropdown-item" (click)="doIndisponiveis()">Meias</button>
+                    <button class="dropdown-item" (click)="doDisponibilidade()">Todos</button>
+                    <button class="dropdown-item" (click)="doDisponibilidade()">Blusa</button>
+                    <button class="dropdown-item" (click)="doDisponibilidade()">Calça</button>
+                    <button class="dropdown-item" (click)="doDisponibilidade()">Casaco</button>
+                    <button class="dropdown-item" (click)="doDisponibilidade()">Vestido</button>
+                    <button class="dropdown-item" (click)="doDisponibilidade()">Body</button>
+                    <button class="dropdown-item" (click)="doDisponibilidade()">Calçados</button>
+                    <button class="dropdown-item" (click)="doDisponibilidade()">Meias</button>
                 </div>
             </div>
         </div>
@@ -49,7 +54,7 @@
 </div>
 <hr />
 
-<div class="container mb-4">
+<div class="container mb-4 mt-4">
     <div class="row">
         <div class="col-xs-12 col-lg-12 col-md-12">
             <h4>Resultados:</h4>

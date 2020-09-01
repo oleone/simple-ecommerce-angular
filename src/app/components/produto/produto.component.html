@@ -1,25 +1,57 @@
-<div class="produto d-flex flex-column justify-content-between">
+<div class="produto d-flex flex-column justify-content-between" *ngIf="!inDetail">
     <div class="imagem-produto"
-        style="background-image: url('../assets/images/{{ filterPhotoInSpotlight(produto.imagens).nome }}')"></div>
-    <div class="produto-titulo">
+        style="background-image: url('../assets/images/{{ filterPhotoInSpotlight(produto.imagens)?.nome }}')"></div>
+    <div class="produto-titulo mt-2">
         <h5><strong>{{ produto.nome }}</strong></h5>
     </div>
     <div class="starts d-flex flex-row">
         <star-rating [rating]="calculateRate(produto.notas)"></star-rating>
     </div>
     <div class="d-flex justify-content-between">
-        <div class="tipo mb-3">{{ produto.categoria }} - {{ produto.precoMedio | currency:"BRL" }}</div>
+        <div class="tipo mb-3">{{ produto.categoria }} - {{ produto.precoMedio | cifroes }}</div>
         <div class="disponibilidade">
             <div class="d-flex flex-row align-items-center" *ngIf="produto.disponivel">
-                <div class="circulo-disponibilidade success mr-1"></div> <span class="disponibilidade-texto">Disponível</span>
+                <div class="circulo-disponibilidade success mr-1"></div> <span
+                    class="disponibilidade-texto">Disponível</span>
             </div>
             <div class="d-flex flex-row align-items-center" *ngIf="!produto.disponivel">
-                <div class="circulo-disponibilidade warning mr-1"></div> <span class="disponibilidade-texto">Indisponível</span>
+                <div class="circulo-disponibilidade warning mr-1"></div> <span
+                    class="disponibilidade-texto">Indisponível</span>
             </div>
         </div>
     </div>
 
-    <div class="botao-detalhe">
-        <button class="btn btn-primary btn-lg btn-block" (click)="goToDetail(produto.id)">Detalhe</button>
+    <div class="botao-detalhe" *ngIf="!inDetail">
+        <button class="btn btn-primary btn-lg btn-block" (click)="goToDetail(produto)">Detalhe</button>
     </div>
+</div>
+
+<div class="row produto-detail" *ngIf="inDetail">
+    <!-- <div class="imagem-produto-detail"
+        style="background-image: url('../assets/images/{{ filterPhotoInSpotlight(produto.imagens)?.nome }}')"></div> -->
+    <div class="imagem-detalhe col-6">
+        <img src="../assets/images/{{ filterPhotoInSpotlight(produto.imagens)?.nome }}" alt="" width="500"
+            height="auto">
+    </div>
+
+    <div class="col-6">
+        <div>
+            <h3>{{ produto.nome }}</h3>
+        </div>
+        <div class="starts starts-detail d-flex flex-row">
+            <star-rating [rating]="calculateRate(produto.notas)"></star-rating>
+        </div>
+        <div>{{ produto.categoria }} - {{ produto.precoMedio | cifroes }}</div>
+        <div class="disponibilidade">
+            <div class="d-flex flex-row align-items-center" *ngIf="produto.disponivel">
+                <div class="circulo-disponibilidade success mr-1"></div> <span
+                    class="disponibilidade-texto">Disponível</span>
+            </div>
+            <div class="d-flex flex-row align-items-center" *ngIf="!produto.disponivel">
+                <div class="circulo-disponibilidade warning mr-1"></div> <span
+                    class="disponibilidade-texto">Indisponível</span>
+            </div>
+        </div>
+    </div>
+
 </div>

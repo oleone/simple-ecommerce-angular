@@ -1,24 +1,28 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-filter',
   templateUrl: './filter.component.html',
   styleUrls: ['./filter.component.scss']
 })
-export class FilterComponent implements OnInit {
+export class FilterComponent implements OnInit, OnChanges {
 
   @Input() data: any[];
   @Output() changeFilter = new EventEmitter<any>();
 
   _data: any[];
 
-  constructor() { }
+  disponivel = true;
 
-  ngOnInit(): void {
-    if (this.data) {
-      this._data = [...this.data];
+  constructor() { }
+  
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.data.currentValue) {
+      this._data = [...changes.data.currentValue];
     }
   }
+
+  ngOnInit(): void { }
 
   change() {
     this.changeFilter.next(this.data);
@@ -29,12 +33,19 @@ export class FilterComponent implements OnInit {
     this.changeFilter.next(this.data);
   }
 
-  doDisponiveis() {
-    const filter = 'disponivel=false';
-  }
+  doDisponibilidade() {
+    // const filter = 'disponivel=false';
+    console.log('disponiveis');
+    console.log(this.data);
+    console.log(this._data);
+    if (this.disponivel) {
+      this.data = this._data.filter(d => d['disponivel'] === false);
+    } else {
+      this.data = this._data.filter(d => d['disponivel'] === true);
+    }
 
-  doIndisponiveis() {
-
+    this.change();
+    this.disponivel = !this.disponivel;
   }
 
 }
