@@ -10,7 +10,7 @@ import { CifroesPipe } from './pipes/cifroes.pipe';
     AppComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule
   ],
   providers: [],
